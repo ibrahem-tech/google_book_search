@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 
 class Results extends Component {
+
     state = {
-        savedBooks : [], 
+        savedBooks: [],
     }
 
     componentDidMount() {
         API.savedBooks()
-        .then(savedbooks => this.setState({savedBooks}))
-        .catch(err => console.error(err));
+            .then(savedBooks => this.setState({ savedBooks: savedBooks }))
+            .catch(err => console.error(err));
     }
 
     handleSave = book => {
@@ -61,4 +62,3 @@ class Results extends Component {
 }
 
 export default Results;
-
